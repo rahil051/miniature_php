@@ -1,2 +1,2 @@
-# miniature_php
+# Miniature PHP
 A Micro PHP Framework
