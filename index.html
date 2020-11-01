@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Miniature - PHP Micro Framework</title>
+    <link href="css/miniature.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            color: #282828;
+            background-color:#F4F4F4;
+            /*background-image: url(img/grey4.jpg);*/
+        }
+
+        pre {
+            color: #282828;
+            text-align: left;
+        }
+        /*Panel tabs*/
+        .panel-tabs {
+            position: relative;
+            bottom: 30px;
+            clear:both;
+            border-bottom: 1px solid transparent;
+        }
+
+        .panel-tabs > li {
+            float: left;
+            margin-bottom: -1px;
+        }
+
+        .panel-tabs > li > a {
+            margin-right: 2px;
+            margin-top: 4px;
+            line-height: .85;
+            border: 1px solid transparent;
+            color: #ffffff;
+        }
+
+        .panel-tabs > li > a:hover {
+            border-color: transparent;
+            color: #ffffff;
+            background-color: transparent;
+        }
+
+        .panel-tabs > li.active > a,
+        .panel-tabs > li.active > a:hover,
+        .panel-tabs > li.active > a:focus {
+            color: #fff;
+            cursor: default;
+            background-color: rgba(255,255,255, .23);
+            border-bottom-color: transparent;
+        }
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!--  style="background-color:#D1FFF5" -->
+<body>
+<div class="container">
+    <div class="row">
+        <br/><br/>
+        <div class="page-header">
+            <h3><strong>Miniature PHP<br/></strong></h3>
+            <h4><i>PHP Micro Framework</i></h4>
+            <blockquote><small><i>Rahil Khurshid Ali</i></small></blockquote>
+        </div>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">A Micro Framework For Everyday PHP Programming</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="col-md-12">
+            <div class="well" style="border: 1px solid gray">
+                <article>
+                Miniature is a very small PHP Framework, which purpose is to provide developer the ease of creating web applications fast, by writing less and efficient code.<br>Inspired from CodeIgniter, Miniature tends to provide a set of useful classes that can be used to write fast and easy web application.
+                </article>
+                <br/>
+                <strong>Key Features</strong>
+                <ul>
+                    <li>An Object-Oriented Framework.</li>
+                    <li>CodeIgniter like Database Abstraction Layer and Form Validation System.</li>
+                    <li>Loose coupled.</li>
+                    <li>Lightweight and fast.</li>
+                    <li>Easy configuration.</li>
+                    <li>Modifiable Classes.</li>
+                </ul>
+            </div>
+            <div class="page-header"  id="doc">
+                <h1>Documentation</h1>
+            </div>
+            <div class="row">
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Miniature</a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
+                                  <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#doc">Getting Started</a></li>
+                                    <li><a href="#config">Configuration</a></li>
+                                    <li><a href="#database">Database Class</a></li>
+                                    <li><a href="#input">Input Class</a></li>
+                                    <li><a href="#validation">Validation Class</a></li>
+                                    <li><a href="#hash">Hash Class</a></li>
+                                    <li><a href="#session">Session Class</a></li>
+                                    <li><a href="#cookie">Cookie Class</a></li>
+                                    <li><a href="#redirect">Redirect Class</a></li>
+                                    <li><a href="#token">Token Class</a></li>
+                                    <li><a href="#user">User Class</a></li>
+                                    
+                                  </ul>
+                                </li>
+                                <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Practical Examples <span class="caret"></span></a>
+                                  <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#crud_app">CRUD Application</a></li>
+                                    <li><a href="#login_register">Login/Registration Form</a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+              <div class="col-md-4 col-md-offset-4"></div>
+            </div>
+            <div id="config">
+                <h2>Getting Started</h2>
+            </div>
+            <!-- Configuration start -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Configuration</h3>
+                    <span class="pull-right">
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#setting_up" data-toggle="tab">Setting Up</a></li>
+                            <li><a href="#config_basics" data-toggle="tab">Configuration Basics</a></li>
+                            <li><a href="#config_values" data-toggle="tab">Accessing Configuration Options</a></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="setting_up">
+                            <h3>Setting Up the Project</h3>
+                            <h4>Preparing Files</h4>
+                            In every php file that you create inside the root directory of the project, it must include the init.php file which is located inside the includes folder.<br/>
+                            To do so, require once the file.
+                            <pre>require_once('includes/init.php');</pre>
+                            <hr>
+                            <h4>Setting Up the Database Connection</h4>
+                            In the "includes" folder, open "init.php"<br/>
+                            The Database credentials can be set in the $GLOBALS['config'] array.
+                            <pre>$GLOBALS['config'] = array(
+    'mysql' => array(
+        'host' => 'hostname',
+        'username' => 'your_username',
+        'password' => 'your_password',
+        'db_name' => 'database_name'
+    )
+)</pre>
+                        Enter the database connection values into their respective keys, like<br/>
+                        <pre>'host' => 'localhost' // and so on...</pre>
+                        </div>
+                        <div class="tab-pane" id="config_basics">
+                            <h3>Configuration Basics</h3>
+                            The Miniature framework configuration is easy and modifiable.<br/>
+                            The system relies on the $GLOBALS['config'] array in the init.php file. All the configuration options can be set there.
+                            <pre>$GLOBALS['config'] = array(
+    'mysql' => array(
+        'host' => 'your_host_name',
+        'username' => 'your_username',
+        'password' => 'your_password',
+        'db_name' => 'your_db_name'
+        ),
+    'remember' => array(
+        'cookie_name' => 'hash',
+        'cookie_expiry' => 604800
+        ),
+    'session' => array(
+        'user_session' => 'user',
+        'token_name' => 'token'
+        ),
+    'redirect' => array(
+        '404' => 'includes/404.php'
+        ),
+    'table_name' => array(
+        'users' => 'users',
+        'user_session' => 'user_session'
+        ),
+    'table_col' => array(
+        'user_session' => array(
+            'hash' => 'hash'
+            )
+        )
+);</pre>
+                            The system heavily uses this array structure to access different credentials.<br/>
+                            Like, if database connection has to access the hostname, it can do so by navigating to 'mysql' array to find the 'host' key.<br/>
+                            If the User Class has to access the user's table name, it does that by navigating to 'table_name' and inside it the 'users' key which stores the user table name.<br/>
+                            The array can go deeper to granulize the site options.<br/><br/>
+                            For example you want a place to store information about multiple directories inside the project, you can do this by creating a custom array for directories inside the $GLOBALS['config'] array.<br/>
+                            <pre>'directory' => array(
+    'uploads_dir' => 'uploads',
+    'images_dir' => 'uploads/images'
+)</pre>
+                            Then all you have to do is to access the directory array to retrieve the respective path. And this is discussed in the <a href="#config_values" data-toggle="tab">Accessing Configuration Options</a> section
+                        </div>
+                        <div class="tab-pane" id="config_values">
+                            <h3>Accessing Configuration Options</h3>
+                            Accessing configuration values is easy.<br/>
+                            Taking the previous directory example;<br/>
+                            <pre>'directory' => array(
+    'uploads_dir' => 'uploads',
+    'images_dir' => 'uploads/images'
+)</pre>
+                            <strong>Accessing: </strong> And which can be accessed like this, <br/>
+                            <pre>Config::get('directory/uploads_dir'); // outputs 'uploads'</pre>
+                            
+                            Similarly, for accessing the database name you can write,<br/>
+                            <pre>Config::get('mysql/db_name'); // outputs 'database_name'</pre>
+                            The array can go much deeper. Take the 'table_col' array as an example which stores column names for a particular table.<br/>
+                            <pre>'table_col' => array(
+    'user_session' => array(
+        'hash' => 'hash',
+        'user_id' => 'uid'
+        )
+)</pre>
+                            The hash column name can be accessed by,
+                            <pre>Config::get('table_col/user_session/hash'); // outputs 'hash'</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Configuration end -->
+
+            <!-- Database -->
+            <div id="database">
+                <h2>Database Class</h2>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Database Class</h3>
+                    <span class="pull-right">
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#instantiate" data-toggle="tab">Instantiate Class</a></li>
+                            <li><a href="#query" data-toggle="tab">Qureying Basics</a></li>
+                            <li><a href="#select" data-toggle="tab">Select</a></li>
+                            <li><a href="#insert" data-toggle="tab">Insert</a></li>
+                            <li><a href="#update" data-toggle="tab">Update</a></li>
+                            <li><a href="#delete" data-toggle="tab">Delete</a></li>
+                            <li class="dropdown">                          
+                                <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret">
+                                </span></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                                <li class=""><a href="#single_row" tabindex="-1" role="tab" data-toggle="tab">Getting single row</a></li>
+                                  <li class=""><a href="#record_type" tabindex="-1" role="tab" data-toggle="tab">Record Type</a></li>
+                                  <li class=""><a href="#count" tabindex="-1" role="tab" data-toggle="tab">Affected Row Count</a></li>
+                                  <li class=""><a href="#pdo" tabindex="-1" role="tab" data-toggle="tab">Using PDO Methods</a></li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="instantiate">
+                            <h3>Instantiating Database Class</h3>
+                            Syntax: <pre>Database::getInstance();</pre>
+                            Returns a Singleton Database Instance.<br/>
+                            The instance can be referenced to a variable;
+                            <pre>$db = Database::getInstance();</pre>
+                            The $db reference will be used all over the documentation instead of Database::getInstance().
+                        </div>
+
+                        <div class="tab-pane" id="query">
+                            <h3>Querying</h3>
+                            <div class="well">
+                            Table “blog” is used for the demonstration overall the tutorial<br/>
+                            Table structure: Blog [id(PK), title, author, content];
+                            </div>
+                        <div class="divider"></div>
+                            Syntax: <pre>$result = $db->query($query, $params);</pre>
+                            The <strong>query()</strong> method takes the query as the first parameter and set of parameters as an array as the second parameter, which is optional.<br/>
+Returns a set of records from table as objects along with Database class attributes;<br/>
+Here is a demonstration of a simple select statement using the query method.<br/>
+Demo: <pre>$blog_data = $db->query(“SELECT * FROM blog”);</pre>
+Result: <pre>
+                        Database Object
+(
+    [_pdo:Database:private] => PDO Object
+        (
+        )
+
+    [_query:Database:private] => PDOStatement Object
+        (
+            [queryString] => SELECT * FROM blog
+        )
+
+    [_result:Database:private] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [id] => 1
+                    [title] => Miniature PHP Framework
+                    [author] => Rahil
+                    [content] => Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                )
+
+            [1] => stdClass Object
+                (
+                    [id] => 2
+                    [title] => Ruby Language
+                    [author] => Yukihiro Matsumoto
+                    [content] => Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                )
+
+        )
+
+    [_count:Database:private] => 2
+    [_error:Database:private] => 
+    [_is_object:Database:private] => 1
+</pre>
+The above returned result set also includes some PDO attirbures, which can pe seperated using the <strong>getResult()</strong> method.
+
+<h3>Getting the results</h3>
+To access the records, use <strong>getResult()</strong> method:<br/>
+Demo:  <pre>$blog_data = $db->query(“SELECT * FROM blog”)->getResult();</pre>
+Result:<pre>
+                        Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 1
+            [title] => Miniature PHP Framework
+            [author] => Rahil
+            [content] => Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        )
+
+    [1] => stdClass Object
+        (
+            [id] => 2
+            [title] => Ruby Language
+            [author] => Yukihiro Matsumoto
+            [content] => Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        )
+
+)
+</pre>
+<h3>Passing Paramters</h3>
+The query method provides the ease of binding paramters with query, instead of contactinating them, which causes serious security issues.<br/>
+                        Syntax: <pre>$db->query(“SELECT * FROM table_name WHERE column_name = ?”, array(value))->getResult();</pre>
+                        The "?" sign in the query is the placeholder for the value, i.e. when the query is executed, the placeholder is replaced with the value.<br/>
+                        The following example demonstrates how to bind values into a query.<br/>
+                        Demo: <pre>$db->query(“SELECT * FROM blog WHERE `id` > ? AND `id` < ?”, array(2, 6))->getResult();</pre>
+                        The two placeholder will be replaced with numeric values in the array, respect to their position, so the index position of the values matter.<br/>
+                        Here is an another example of retrieving a record by matching a string value.<br/>
+                        Demo: <pre>$db->query("SELECT * FROM blog WHERE title IN (?)", array('Birds of Fire'))->getResult();</pre>
+                        </div>
+                        <div class="tab-pane" id="select">
+                        <h3>Selecting Record</h3>
+                            Rather than selecting records by querying “SELECT column_name FROM table_name”, we can instead use the <strong>select()</strong> method;<br/>
+Syntax: <pre>$result = $db->select(“table_name”)->getResult();</pre>
+Demo: <pre>$blog_data = $db->select(“blog”)->getResult();</pre>
+Result:<pre>
+Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 1
+            [title] => Miniature PHP Framework
+            [author] => Rahil
+            [content] => Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        )
+
+    [1] => stdClass Object
+        (
+            [id] => 2
+            [title] => Ruby Language
+            [author] => Yukihiro Matsumoto
+            [content] => Sed ut perspiciatis unde omnis iste natus 
+        )
+)
+</pre>
+<h3>Selecting Data by conditional</h3>
+The select method can also be used to get results by conditional, by passing a condition as the second parameter in the form of array.<br/>
+Syntax: <pre>$result = $db->select(“table_name”, array(
+“column_name”, “logical_operator”, “value”)
+)->getResult();</pre>
+Demo: <pre>$blog_data = $db->select(“blog”, array( “id”, “=”, “1”))->getResult();</pre>
+Result:<pre>
+             Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 1
+            [title] => Miniature PHP Framework
+            [author] => Rahil
+            [content] => Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        )
+
+)
+</pre>
+
+                        </div>
+                        <div class="tab-pane" id="insert">
+                        <h3>Inserting Records</h3>
+                            Inserting records is easier than before. The <strong>insert()</strong> method takes the table name as the first parameter and an associative array of records to be inserted as the second parameter.<br/>
+Syntax: <pre>$db->insert(“table_name”, array(“column_name” => “value”));</pre>
+Returns true on successful insertion otherwise false.<br/>
+Demo: 
+<pre>$db->insert(“table_name”, array(
+“title” => “Python”,
+“author” => “Guido Van Rossum”
+));</pre>
+
+                        </div>
+                        <div class="tab-pane" id="update">
+                        <h3>Updating Records</h3>
+                        Updating records is exactly the same as insertion, except it takes the condition as the third parameter.<br/>
+Syntax: <pre>$db->update(“table_name”, array(“column_name” => “value”), array( “column_name”, “logical_operator”, “value”));</pre>
+Returns true on successful update otherwise false.<br/>
+Demo: <pre>$db->update("blog", array("author" => "human"), 
+array("id", "=", "3"));</pre>
+                        </div>
+                        <div class="tab-pane" id="delete">
+                        <h3>Deleting Records:</h3>
+Syntax: <pre>$db->delete(“table_name”, array(
+“column_name”, “logical_operator”, “value”);</pre>
+Returns true on successful deletion otherwise false.<br/>
+Demo: <pre>$db->delete("blog", array("id", "=", "3"));</pre>
+                        </div>
+                        <div class="tab-pane" id="single_row">
+                        <h3>Selecting single row</h3>
+                            When querying to select a single row, use <strong>getRow()</strong> methods to get a single dimension array of the records.<br/>
+                            Instead of using <strong>getResult()</strong>, use <strong>getRow()</strong> if and only if the returned record is a single row.<br/>
+Syntax: <pre>$result = $db->select(“table_name”, array(“column_name” => “value”), array( “column_name”, “logical_operator”, “value”))->getRow();</pre>
+Demo: <pre>$single_blog = $db->select("blog", array("id", "=", "1"))->getRow();</pre>
+Result:<pre>
+stdClass Object
+(
+    [id] => 1
+    [title] => Miniature PHP Framework
+    [author] => Rahil
+    [content] => Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+)
+</pre>
+                        </div>
+                        <div class="tab-pane" id="record_type">
+                        <h3>Altering Record type</h3>
+                            <strong>getResult()</strong> by default returns Object of records of type stdClass. To get an Array of record, simply set the <strong>setObject()</strong> method to <strong>false</strong>. <br/>
+Demo: <pre>$db->setObject(false);</pre>
+
+Result:
+<pre>
+                        Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [title] => Miniature PHP Framework
+            [author] => Rahil
+            [content] => Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [title] => Ruby Language
+            [author] => Yukihiro Matsumoto
+            [content] => Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        )
+
+)
+</pre>
+                        </div>
+                        <div class="tab-pane" id="count">
+                            <h3>Affetcted Row count</h3>
+                            The <strong>getCount()</strong> method can be used to get the number of rows affected after the latest query execution.<br/>
+Syntax: <pre>$db->getCount();</pre>
+                        </div>
+                        <div class="tab-pane" id="pdo">
+                            <h3>Using PDO methods</h3>
+                            The Database Class is a wrapper around the PDO Database Abstraction Layer. Therefore, the Database Class can also be used to call the PDO methods. It provides the <strong>pdo()</strong> method to call the it's methods.
+                            <pre>$db->pdo()->lastInsertId();
+$db->pdo()->errorCode();
+$db->pdo()->getAvailableDrivers();
+$db->pdo()->rollBack();
+$db->pdo()->bindValue();
+// and so on</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="input">
+                <h2>Input Class</h2>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Input Class</h3>
+                    <span class="pull-right">
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#instantiate_input" data-toggle="tab">Instantiate Class</a></li>
+                            <li><a href="#form_input" data-toggle="tab">Form Input</a></li>
+                            <li><a href="#check_input" data-toggle="tab">Checking Input Values</a></li>
+                            <li><a href="#sanitize_input" data-toggle="tab">Sanitizing Input</a></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="instantiate_input">
+                            <h3>Instantiating Input Class</h3>
+                            With the Input Class, you can,
+                            <ul>
+                                <li>get sanitized POST/GET values.</li>
+                                <li>sanitize inputs.</li>
+                                <li>sanitize an array of input values.</li>
+                            </ul>
+                            Input Class does not need to be instantiated as it uses Static methods.
+                        </div>
+                        <div class="tab-pane" id="form_input">
+                            <h3>Form Input</h3>
+                            <br/>
+                            <strong>Reading POST values from a Form:</strong><br/>
+                            Instead of reading a POST input value like this; <br/>
+                            <pre>$_POST['input_name'];</pre>
+                            Input Class provides a method, which reads and sanitizes the input at the same time.<br/>
+                            Syntax: <pre>Input::get('input_name');</pre>
+                            returns sanitize form input value, otherwise blank value, if no input name was provided.<br/>
+                            Demo: Suppose there is a form input,
+                            <pre>
+&lt;form action="form.php" method="POST"&gt;
+    &lt;input name="username" type="text"/&gt;
+&lt;/form&gt;
+                            </pre>
+                            The POST value can be retrieved like this;
+                            <pre>$username = Input::get('username'); // returns the username</pre><br/>
+                            <strong>Reading GET values from a query string:</strong><br/>
+                            Demo: an example query string contcatenated from a URL.
+                            <pre>http://www.examplesite.com/contact_form.php?email=youremail@domain.com&message=this%20is%20a%20message</pre>
+                            The GET value can be retrieved like this;
+                            <pre>
+$email = Input::get('email');  // returns youremail@domain.com
+$message = Input::get('message'); // returns this is a message
+                            </pre><br/>
+                        </div>
+                        <div class="tab-pane" id="check_input">
+                            <h3>Checking Input Values:</h3>
+                            The <strong>exists();</strong> method checks if a certain POST/GET value already exists.<br/>
+                            Syntax: <pre>Input::exists('input_name');</pre>
+                            returns true if exists, otherwise false.<br/>
+                            Demo:<pre>if(Input::exists('username')){
+    echo Input::get('username');
+}</pre>
+                        </div>
+                        <div class="tab-pane" id="sanitize_input">
+                            <h3>Sanitizing Single Input</h3>
+                            The <strong>Input::sanitize('input_name');</strong> sanitizes any input.<br/>
+                            Demo: <pre>Input::sanitize('username'); // returns sanitized username</pre><br/>
+                            <h3>Sanitizing The Entire POST/GET Array</h3>
+                            The $_POST array returned upon a form submission or $_GET array from a query string can entirely be sanitized using the
+                            <strong>sanitizeAttributes();</strong> method.<br/>
+                            Syntax: <pre>Input::sanitizeAttributes('input_type');</pre>
+                            if no parameter is passed, $_POST array is sanitized by default, otherwise pass 'get' to sanitize $_GET array <br/>
+                            <pre>Input::sanitizeAttributes('get'); //returns sanitized GET array of values.</pre>
+                            Demo: Sanitizing POST from a registration form.
+                            <pre>
+&lt;form action="register.php" method="POST"&gt;
+&nbsp;&nbsp;&nbsp;Username: &lt;input name="username" type="text"/&gt;
+&nbsp;&nbsp;&nbsp;Password: &lt;input name="password" type="password"/&gt;
+&nbsp;&nbsp;&nbsp;Confirm Password: &lt;input name="confirm_password" type="password"/&gt;
+&nbsp;&nbsp;&nbsp;Email: &lt;input name="email" type="text"/&gt;
+&nbsp;&nbsp;&nbsp;Full Name&lt;input name="full_name" type="text"/&gt;
+&nbsp;&nbsp;&nbsp;&lt;input type="submit" value="Register" /&gt;
+&lt;/form&gt;
+                            </pre>
+                            <pre>
+$cleaned_values = Input::sanitizeAttributes();
+                            </pre>
+                            will return an array of cleaned input values upon print_r($cleaned_values);
+                            <pre>
+
+                                Array
+(
+    [0] => watson
+    [1] => abcd
+    [2] => abcd
+    [3] => john.watson@domain.com
+    [4] => John Watson
+)
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="validation">
+                <h2>Validation Class</h2>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Validation Class</h3>
+                    <span class="pull-right">
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#instantiate_validate" data-toggle="tab">Instantiating Class</a></li>
+                            <li><a href="#validating_input" data-toggle="tab">Validating Input</a></li>
+                            <li><a href="#validation_errors" data-toggle="tab">Handling Validation Errors</a></li>
+                            <li><a href="#validating_rules" data-toggle="tab">Validation Rules</a></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="instantiate_validate">
+                            <h3>Instantiating Validation Class</h3>
+                            Validation Class provides a comprehensive system which can be use to validate form input without writing more than 100 lines of code.<br/>
+                            To use the Validation Class, it needs to be instantiated;
+                            <pre>$validation = new Validation();</pre>
+                        </div>
+                        <div class="tab-pane" id="validating_input">
+                            <h3>Validating Form Input</h3>
+                            Validation is easy as never before!<br/>
+                            Only a proper demonstration will convince you.<br/>
+                            Demo: Here is a simple registration form;
+                            <pre>
+&lt;form action="register.php" method="POST"&gt;
+   &nbsp;&nbsp;&nbsp;Username: &lt;input name="username" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;Password: &lt;input name="password" type="password"/&gt;
+   &nbsp;&nbsp;&nbsp;Confirm Password: &lt;input name="confirm_password" type="password"/&gt;
+   &nbsp;&nbsp;&nbsp;Email: &lt;input name="email" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;Full Name&lt;input name="full_name" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;&lt;input type="submit" value="Register" /&gt;
+&lt;/form&gt;</pre>
+                            to validate the form input, upon submission;
+                            <pre>
+$validation = new Validation(); //create a new Validation object
+$validation->check($_POST, array(
+    'username' => array(
+        'required' => true,
+        'min' => 6,
+        'max' => 30,
+        'unique' => 'users'
+        ),
+    'password' => array(
+        'required' => true,
+        'min' => 8,
+        'max' => 60
+        ),
+    'confirm_password' => array(
+        'required' => true,
+        'matches' => 'password'
+        ),
+    'email' => array(
+        'required' => true,
+        'valid_email' => true
+        ),
+    'full_name' => array(
+        'required' => true,
+        'min' => 2,
+        'max' => 128
+        )
+    ));</pre>
+                            Syntax:
+                            <pre>
+$validation = new Validation();
+$validation->check(source, array(
+    'input_name' => array(
+        'rule_name' => 'rule_value'
+    )
+));</pre>
+                            In the above demonstration, $_POST was the source, so it was passed as the first parameter.
+                            To handle the errors generated from valiation, check "Handling Validation Errors" section.
+                            </div>
+                            <div class="tab-pane" id="validation_errors">
+                            <h3>Validation Errors:</h3>
+                            After applying the <strong>check()</strong> method to validate the input values,<br/>
+                            validation errors can be handled like this,<br/>
+                            Example: first check if the validation is passed, i.e. no errors are thrown, otherwise, store the errors to display.<br/>
+                            <pre>
+if($validation->isPassed()){
+    // do other form processing
+} else {
+    $form_errors = $valiadtion->getErrors();
+}</pre>
+                            Syntax: 
+                            For checking if the validation has passed;
+                            <pre>$validation->isPassed(); //returns true if passed, otherwise false
+                            </pre>
+                            if any errors were returned,
+                            <pre>$errors = $validation->getErrors(); // returns an array of form errors
+                            </pre>
+                            Demo: continuing from the registration form, in the "Validating Input" section, <br/>
+                            here are some example inputs, which do not fulfill the validation criteria,
+                            <pre>
+username = rahil                // already existed username
+password = admin 
+confirm_password = adminnew     // this password doesn't match the original one 
+email = rahilemail              // invalid email
+full_name =                     // empty input value
+                            </pre>
+                            printing out the $errors array will return,
+                            <pre>Array
+(
+    [0] => username already exists
+    [1] => password does not matches confirm_password
+    [2] => email is not a valid email
+    [3] => full_name is required
+)</pre>
+                        </div>
+                        <div class="tab-pane" id="validating_rules">
+                            <h3>Validation Rules</h3>
+                            <strong>How to apply validation rules</strong>
+                            Pass an array of inputs with their respective rules as the second parameter of the <strong>check()</strong> method.
+                            <pre>
+array(
+    'field_name' => array ( 
+        //set of rules comes here
+
+        'rule1' => 'rule_value1',
+        'rule2' => 'rule_value2'
+
+        // and so on....
+    )
+)
+                            </pre>
+                            <br/>
+                            <h3>Rules:</h3>
+                            <strong>required:</strong> array( 'required' => true ) will strict a form input to be required.<br/>
+                            <strong>max:</strong> array( 'max' => numeric_value ) checks if a certain form input has a maximum length greater than numeric_value.<br/>
+                            <strong>min:</strong> array( 'min' => numeric_value ) checks if a certain form input has a length minimum than numeric_value.<br/>
+                            <strong>unique:</strong> array( 'unique' => table_name ) checks if a certain form input value already exists in the table.<br/>
+                            <strong>matches:</strong> array( 'matches' => input_name ) checks if a certain inputs matches another field in the form as provided in the rules array.<br/>
+                            <strong>numeric:</strong> array( 'numeric' => true ) checks if a certain form input is a numeric value.<br/>
+                            <strong>valid_email:</strong> array( 'valid_email' => true ) checks if an email input is a valid email.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="hash">
+                <h2>Hash Class</h2>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Hash Class</h3>
+                    <span class="pull-right">
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#instantiate_hash" data-toggle="tab">Instantiating Class</a></li>
+                            <li><a href="#hashing" data-toggle="tab">Hashing</a></li>
+                            <li><a href="#salting" data-toggle="tab">Salting</a></li>
+                            <li><a href="#unique_hash" data-toggle="tab">Generating Unique Hashes</a></li>
+                            <li><a href="#secure_password" data-toggle="tab">Generating Secure Passwords</a></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active">
+                            <h3>Instantiating Hash Class</h3>
+                            Hash Class returns hashed strings using SHA256 encryption algorithm.<br/>
+                            As the Hash Class uses static class methods, so it not needs to be instantiated.
+                        </div>
+                        <div class="tab-pane" id="hashing">
+                            <h3>Hashing</h3>
+                            <strong>Hashing Passwords</strong><br/>
+                            Syntax: <pre>Hash::generateHash($string, $salt = '') 
+// $salt is an optional parameter</pre>
+                            returns hashed string.<br/>
+                            Demo: <pre>$_POST['password'] = someadmin;
+$hashed_password = Hash::generateHash($_POST['password']);
+echo $hashed_password; 
+//outputs 7b0ed19a18030a351c2c7110a4ae7345a640b311921d014fe8665882aa189d08</pre>
+                        </div>
+                        <div class="tab-pane" id="salting">
+                        <h3>Salting</h3>
+                        Salting is a technique, where a password is hashed with a set of special characters or random strings in order to increase its security. Salting similar passwords generates different hashes.<br/>
+                        Syntax: <pre>
+$salt = Hash::generateSalt($length);
+// where length parameter is the length of salt string.
+                        </pre>
+                        Demo: Salt of length 32 generated multiple times;
+                        <pre>Hash::generateSalt(32); // called multipile times
+// outputs
+// �y�*7¶�ʘ��&��L%Ac%�,u�c
+// 9j.�vŲe�!E���ȉ�*�����˒T3�
+// �ζ补ڻ(�J����N 3�{|P�3ld��A</pre>
+                        </div>
+                        <div class="tab-pane" id="unique_hash">
+                            <h3>Generating Unique Hashes</h3>
+                            Hash Class also provide a <strong>generateUnique()</strong> method to generate random hashes.<br/>
+                            Syntax: <pre>Hash::generateUnique();</pre>
+                            Demo: 
+                            <pre>echo Hash::generateUnique(); // called multipile times
+// outputs
+// 1606d21e765ba21814a64d3ddcf61b314b763c14348599cfece3c9866fe8bea2
+// b67fb92e5ba0b9b3037621cf5f302560e0fa3d7f1910fc747e1818c85e7fa2ef 
+// 393b2c7e35da38b25e04f898b33dcc7e21928d6ae284e9b88f387e5a7dd0afda </pre>
+                        </div>
+                        <div class="tab-pane" id="secure_password">
+                            <h3>Generating Secure Passwords</h3>
+                            Now we know how to Hash and Salt strings using the Hash Class, therefore, we can use this functionality to generate secure passwords.<br/>
+                            It is highly recommended to hash a password with a random salt. To do so, follow these steps;
+                            <ol>
+                                <li>Generate a random salt of a suitable length (32 is recommended). Store it.
+                                    <pre>$salt = Hash::generateSalt(32);</pre>
+                                </li>
+                                <li>
+                                Hash the password with this salt.
+                                <pre>$hashed_password = Hash::generateHash($your_password, $salt);</pre>
+                                </li>
+                            </ol>
+                            Remember to store the salt in the table in a separate column,<br/>
+                            <div class="col-md-10">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <td>id</td>
+                                        <td>username</td>
+                                        <td>hashed_password</td>
+                                        <td>salt</td>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>john</td>
+                                            <td>b6d07ac06497cfb0053adc1645d2d44da8a0dae7e8f493a3a085b2dd4be3b1cc</td>
+                                            <td>ÅgsþLD˜Žæ˜G­DXýï.¤éfEžJkËj…­</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Lestrade</td>
+                                            <td>d0a60006a6f2e5b596f9f74a533c3413f01e124e7e5991fb11fa726e45f2ef4a</td>
+                                            <td>,’è\�”æ¸þà•ðã^:9xÚp¤èKâ[ýÃÞ}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="session">
+                <h2>Session Class</h2>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Session Class</h3>
+                    <span class="pull-right">
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#instantiate_session" data-toggle="tab">Instantiating Class</a></li>
+                            <li><a href="#set_session" data-toggle="tab">Setting a Session</a></li>
+                            <li><a href="#get_session" data-toggle="tab">Getting a Session</a></li>
+                            <li><a href="#delete_session" data-toggle="tab">Deleting a Session</a></li>
+                            <li><a href="#flash_session" data-toggle="tab">Flashing</a></li>
+                            <li><a href="#session_exists" data-toggle="tab">Check if a Session exists</a></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="instantiate_session">
+                            <h3>Instantiating Session Class</h3>
+                            Using Session Class, you can:<br/>
+                            <ul>
+                                <li>Get/Set Session variable.</li>
+                                <li>Delete/Unset Session variable.</li>
+                                <li>Flash a Session.</li>
+                                <li>Check if a Session exists.</li>
+                            </ul>
+                            As the Session Class uses static class methods, so it not needs to be instantiated.
+                        </div>
+                        <div class="tab-pane" id="set_session">
+                            <h3>Setting a Session</h3>
+                            Syntax: <pre>Session::set($session_name, $session_value);</pre>
+                            returns $_SESSION[$session_name] = $session_value<br/>
+                            Demo: <pre>Session::set('user_data', 'john')</pre>
+                            Result: <pre>$_SESSION['user_data'] = 'john'</pre>
+                        </div>
+                        <div class="tab-pane" id="get_session">
+                            <h3>Getting a Session</h3>
+                            Syntax: <pre>Session::get($session_name);</pre>
+                            returns the value of the session name.<br/>
+                            Demo: <pre>echo Session::get('user_data');</pre>
+                            Result: <pre>john</pre>
+                        </div>
+                        <div class="tab-pane" id="delete_session">
+                            <h3>Deleting a Session</h3>
+                            Syntax: <pre>Session::delete($session_name);</pre>
+                            returns true if the session existed and successfully deleted, otherwise false if session of no such name exists.<br/>
+                            Demo: <pre>Session::delete('user_data');</pre>
+                        </div>
+                        <div class="tab-pane" id="flash_session">
+                            <h3>Flashing</h3>
+                            Flashing a session, creates a session and then deletes it on the second method call.<br/>
+                            The method is useful for displaying alert messages.<br/>
+                            Syntax: 
+                            <pre>Session::flash($session_name, $session_value); //to set the session
+Session::flash($session_name); //to call and unset the session on the fly.</pre>
+                            returns the session value if it exists and flashes it value, otherwise set a new session.<br/>
+                            Demo: <pre>Session::flash('success_messsage', 'The post has been deleted'); //sets a session
+echo Session::flash('success_messsage'); // echos 'The post has been deleted'
+echo Session::flash('success_messsage'); // echos nothing on the second call, because the session has been flashed.</pre>
+                        </div>
+                        <div class="tab-pane" id="session_exists">
+                            <h3>Check if a Session exists</h3>
+                            The <strong>Session::exists($session_name)</strong> checks if the session exists.<br/>
+                            Syntax: <pre>Session::exists($session_name)</pre>
+                            returns true if exists otherwise false.<br/>
+                            Demo: <pre>
+if(Session::exists('user_data')){
+    echo Session::flash('user_data');
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cookie">
+                <h2>Cookie Class</h2>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cookie Class</h3>
+                    <span class="pull-right">
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#instantiate_cookie" data-toggle="tab">Instantiating Class</a></li>
+                            <li><a href="#set_cookie" data-toggle="tab">Setting a Cookie</a></li>
+                            <li><a href="#get_cookie" data-toggle="tab">Getting a Cookie</a></li>
+                            <li><a href="#delete_cookie" data-toggle="tab">Deleting a Cookie</a></li>
+                            <li><a href="#cookie_exists" data-toggle="tab">Check if a Cookie exists</a></li>    
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="instantiate_cookie">
+                            <h3>Instantiating Cookie Class</h3>
+                            Using the Cookie Class, you can:<br/>
+                            <ul>
+                                <li>Get/Set a Cookie.</li>
+                                <li>Delete a Cookie.</li>
+                                <li>Check if a Cookie exists.</li>
+                            </ul>
+                            As the Session Class uses static class methods, so it not needs to be instantiated.
+                        </div>
+                        <div class="tab-pane" id="set_cookie">
+                            <h3>Setting a Cookie</h3>
+                            Syntax: <pre>Cookie::set($name, $value, $expiry);</pre>
+                            returns true if set successful, otherwise false.<br/>
+                            Demo: <pre>Cookie::set('remember_user', 3, 64000);</pre>
+                        </div>
+                        <div class="tab-pane" id="get_cookie">
+                            <h3>Getting a Cookie</h3>
+                            Syntax: <pre>Cookie::get($name);</pre>
+                            returns the cookie value i.e. $_COOKIE[$name];<br/>
+                            Demo: <pre>Cookie::get('remember_user');</pre>
+                        </div>
+                        <div class="tab-pane" id="delete_cookie">
+                            <h3>Deleting a Cookie</h3>
+                            Syntax: <pre>Cookie::delete($name);</pre>
+                            returns true if successfully deleted, otherwise false.<br/>
+                            Demo: <pre>Cookie::delete('remember_user'); // returns true or false</pre>
+                        </div>
+                        <div class="tab-pane" id="cookie_exists">
+                            <h3>Check if a Cookie exists</h3>
+                            Syntax: <pre>Cookie::exists($name);</pre>
+                            returns true if exists, otherwise false.<br/>
+                            Demo: <pre>
+if(Cookie::exists(Cookie::get('remember_user'))){
+    Cookie::delete('remember_user');
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="redirect">
+                <h2>Redirect Class</h2>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Redirect Class</h3>
+                    <span class="pull-right">
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#instantiate_redirect" data-toggle="tab">Instantiating Class</a></li>
+                            <li><a href="#redirecting" data-toggle="tab">Redirecting to Pages</a></li>
+                            <li><a href="#redirect_error" data-toggle="tab">Redirecting to Error Pages</a></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="instantiate_redirect">
+                            <h3>Instantiating Redirect Class</h3>
+                            With the Redirect Class you can,
+                            <ul>
+                                <li>Redirect to other pages</li>
+                                <li>Redirect to Error Pages</li>
+                            </ul>
+                            As the Redirect Class uses static class methods, so it not needs to be instantiated.
+                        </div>
+                        <div class="tab-pane" id="redirecting">
+                            <h3>Redirecting to Pages</h3>
+                            Syntax: <pre>Redirect::to('url');</pre>
+                            Demo: <pre>Redirect::to('admin/manage_pages.php');</pre>
+                        </div>
+                        <div class="tab-pane" id="redirect_error">
+                            <h3>Redirecting to Error Pages</h3>
+                            The Redirect::to(); method can also be used to redirect to several error pages, like 404 error page.<br/>
+                            <strong>Redirecting to 404</strong>: <pre>Redirect::to(404);</pre>
+                            404 is passed as a numeric value not as a string. Therefore to redirect to a error page, simple pass the error page numeric code in the Redirect::to() method as numeric value. It will not work if a string is passed instead.<br/>
+                            Right now, Redirect Class only supports 404 redirection. Further error page redirection will be added in the later versions.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="token">
+                <h2>Token Class</h2>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Token Class</h3>
+                    <span class="pull-right">
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#instantiate_token" data-toggle="tab">Instantiating Class</a></li>
+                            <li><a href="#integrate_token" data-toggle="tab">Integration into Forms</a></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="instantiate_token">
+                            <h3>Instantiating Token Class</h3>
+                            The Token Class provides security for avoiding Cross Site Request Forgery (CSRF) where unauthorized commands are transmitted from a user that the website trusts.<br/>
+                            For example, a user try to submit a form by passing malicious values through URL query string, instead of hitting the submission button.<br/>
+                            This is where the Token Class comes in for the rescue.<br/>
+                            As the Token Class uses static class methods, so it not needs to be instantiated.
+                        </div>
+                        <div class="tab-pane" id="integrate_token">
+                            <h3>Integration into Forms</h3>
+                            Here the example of an attack on a web form is taken to demonstrate the security provided by the Token Class.<br/>
+                            <pre>&lt;form action="register.php" method="POST"&gt;
+   &nbsp;&nbsp;&nbsp;Username: &lt;input name="username" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;Password: &lt;input name="password" type="password"/&gt;
+   &nbsp;&nbsp;&nbsp;Confirm Password: &lt;input name="confirm_password" type="password"/&gt;
+   &nbsp;&nbsp;&nbsp;Email: &lt;input name="email" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;Full Name&lt;input name="full_name" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;&lt;input type="submit" value="Register" /&gt;
+&lt;/form&gt;</pre>
+                            Certain user tries to hit the form by passing value through query string.
+                            <pre>http://www.somedomain.com/register.php?username=45ffsdfe&password=567345ty&confirm_password=567345ty&email=fdrevv@454.com&full_name=ewrf%20sdfsc%20sdfsdf</pre>
+                            Therefore, the Token Class provides two methods to avoid such attack.<br/>
+                            <pre>Token::generate();</pre>
+                            <pre>Token::check('token_name');</pre>
+                            <br/>
+                            You need to call and echo out the Token::generate() method in the value of an input field of type hidden. It is shown in bold in the form.<br/>
+                            <pre>&lt;form action="register.php" method="POST"&gt;
+   &nbsp;&nbsp;&nbsp;Username: &lt;input name="username" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;Password: &lt;input name="password" type="password"/&gt;
+   &nbsp;&nbsp;&nbsp;Confirm Password: &lt;input name="confirm_password" type="password"/&gt;
+   &nbsp;&nbsp;&nbsp;Email: &lt;input name="email" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;Full Name&lt;input name="full_name" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;<strong>&lt;input name="token" type="hidden" value="&lt;?php echo Token::generate(); ?&gt;"/&gt;   &lt-- the Token::generate() method is integrated into a form as an hidden input --&gt</strong>
+   &nbsp;&nbsp;&nbsp;&lt;input type="submit" value="Register" /&gt;
+&lt;/form&gt;</pre>
+                            Then upon form submission, the token generated in the form is needed to be checked.
+                            <pre>if(Token::check(Input::get('token'))){ // where 'token' is the form input name
+    // all of the form validation and processing code comes inside this check.
+}</pre>
+                            <strong>The proper usage of Token Class is demonstrated in the <a href="#login_register" data-toggle="tab">Login/Registration Form</a> application demo.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="user">
+                <h2>User Class</h2>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">User Class</h3>
+                    <span class="pull-right">
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#instantiate_user" data-toggle="tab">Instantiating Class</a></li>
+                            <li><a href="#configure_user" data-toggle="tab">Configuration</a></li>
+                            <li><a href="#user_crud" data-toggle="tab">User's CRUD</a></li>
+                            <li><a href="#user_login_logout" data-toggle="tab">User Login/Logout</a></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="instantiate_user">
+                            <h3>Instantiating User Class</h3>
+                            With the User Class, you can;
+                            <ul>
+                                <li>Perform User's CRUD [Create, Read, Update, Delete].</li>
+                                <li>Log in/Log out a User.</li>
+                                <li>Create User's cookie.</li>
+                            </ul>
+                            User is an object, therefore, the class needs to be instantiated.<br/>
+                            Syntax: <pre>$user = new User();</pre>
+                        </div>
+                        <div class="tab-pane" id="configure_user">
+                            <h3>Configuring the User Class</h3>
+                            The class needs to be configured, before you start using it.<br/>
+                            Follow these steps to configure it;
+                            <ol>
+                                <li>In the init.php file, assign the user table name to table_name/users array in the $GLOBALS['config'] array
+                                    <pre>'table_name' => array(
+    'users' => 'user table name'
+)
+// can be accessed using Config::get('table_name/users')</pre>
+                                </li>
+                                <li>And provide a user's session name to session/users_session array.
+                                    <pre>'session' => array(
+    'user_session' => 'user session name'
+)
+// can be accessed using Config::get('session/user_session')</pre>
+                                </li>
+                            </ol>
+                            <hr/>
+                            <h4>Setting the User Id:</h4>
+                            In the init.php file, assign the user_id column name to table_col/users/user_id array in the $GLOBALS['config'] array
+                                    <pre>'table_col' => array(
+    'users' => array(
+        'user_id' = 'id'
+    )
+)</pre>
+                        </div>
+                        <div class="tab-pane" id="user_crud">
+                            <h3>User's CRUD</h3>
+                            The User Class provides a comprehensive CRUD system for user.<br/>
+                            Rather than using the Database Class for this purpose, the User Class is especially designed to deliver a more robust User Management System.<br/>
+                            <strong>Note: </strong>The variable $user used in these example is a reference to the User object.
+                            <br/><br/>
+                            <h4>Read User: </h4>
+                            To read/select a single user or all of them, use the read() method.<br/>
+                            Surround the method call with a try/catch block as it throws an exception.<br/>
+                            <pre>try{
+    $user->read();
+}catch(Exception $e){
+    print $e->getMessage();
+}</pre>
+                            returns all users from the database as objects. If you want an array of users, simply call Database::getInstance()->setObject(false);<br/>
+                            <strong>Throws an Expection: </strong> No users were found.
+                            Result: <pre>Array
+(
+    [0] => stdClass Object
+        (
+            [id] => 1
+            [username] => rahil
+            [password] => 0775de1a59fa7b55fb7ec86703f57c10b12fc83458a69d7ed74042b4eef028ad
+            [salt] => q���lF@��{/�����$�z-R�EGos
+            [full_name] => Rahil Khurshid Ali
+            [email] => infernus.rk31@gmail.com
+            [joined] => 2014-07-11
+            [last_login] => 2014-07-11 00:00:00
+        )
+
+    [1] => stdClass Object
+        (
+            [id] => 2
+            [username] => imran
+            [password] => 4395576054f711512d5b484e13417143ed2b038078c93ce712051499419a4c82
+            [salt] => �ҩ#�|̿� ���ux�߹�Lx��5��#
+            [full_name] => Imran Uddin
+            [email] => imran@media.com
+            [joined] => 0000-00-00
+            [last_login] => 0000-00-00 00:00:00
+        )
+
+)</pre>
+                            <br/>
+                            To retrieve a single user, pass the user's id in the read() method,
+                            Syntax: <pre>try{
+    $user->read($user_id);
+}catch(Exception $e){
+    print $e->getMessage();
+}</pre>
+                            returns a single user as an object.
+                            <strong>Throws an Exception: </strong> No user with the ID user_id is found.
+                            Demo: <pre>$user->read(2);</pre>
+                            Result: <pre>stdClass Object
+(
+    [id] => 2
+    [username] => imran
+    [password] => 4395576054f711512d5b484e13417143ed2b038078c93ce712051499419a4c82
+    [salt] => �ҩ#�|̿� ���ux�߹�Lx��5��#
+    [full_name] => Imran Uddin
+    [email] => imran@media.com
+    [joined] => 0000-00-00
+    [last_login] => 0000-00-00 00:00:00
+)</pre>
+                            <hr/>
+                            <h4>Create User: </h4>
+                            <strong>save()</strong> methods creates a user by taking an array of user's information as the parameter.<br/>
+                            Surround the method call with a try/catch block as it throws an exception.<br/>
+                            Syntax: <pre>try{
+    $user->save(array(
+        'column_name_1' => 'value_1',
+        'column_name_2' => 'value_2',
+        'column_name_2' => 'value_3'
+        // and so on...
+    ));
+}</pre>
+                            returns last inserted user id on successful creation.
+                            <strong>Throws an Exception: </strong> There was a problem creating your account.
+                            Demo: <pre>try{
+    $userId = $user->save(array(
+        'username' => Input::get('username'),
+        'email' => Input::get('email'),
+        'password' => Input::get('password'),
+        'name' => Input::get('name'),
+        'joined' => date('Y-m-d H:i:s')
+    ));
+    print $userId;
+}catch(Exception $e){
+    print $e->getMessage();</pre>
+                            <hr/>
+                            <h4>Update User:</h4>
+                            The <strong>save()</strong> method is also used for updating the user, just pass the user Id as the second parameter to update.<br/>
+                            Syntax: <pre>try{
+    $user->save(array(
+        'column_name_1' => 'value_1',
+        'column_name_2' => 'value_2',
+        'column_name_2' => 'value_3'
+        // and so on...
+    ), $user_id);
+}</pre>
+                            returns true on successful creation.
+                            <strong>Throws an Exception: </strong> There was a problem updating your account.
+                            Demo: <pre>try{
+    $userId = $user->save(array(
+        'username' => imran34,
+        'email' => imran@somemail.com
+    ), 2);
+}catch(Exception $e){
+    print $e->getMessage();</pre>
+                            <hr/>
+                            <h4>Delete User:</h4>
+                            <strong>delete()</strong> method deletes a user, by passing a user's id.<br/>
+                            Surround the method call with a try/catch block as it throws an exception.<br/>
+                            Syntax: <pre>try{
+    $user->delete($user_id);
+} catch(Exception $e){
+    print $e->getMessage();
+}</pre>
+                            returns true on successful deletion.
+                            <strong>Throws new Exception: </strong>Exception thrown: User with ID user_id not found. No User is deleted.<br/>
+                            Demo: <pre>try{
+    $user->delete(1);
+} catch(Exception $e){
+    print $e->getMessage();
+}
+// returns true if the user 1 is found and deleted, otherwise throws an exception.</pre>
+                        </div>
+                        <div class="tab-pane" id="user_login_logout">
+                            <h3>User Login/Logout</h3>
+                            The User Class also provide secure Login and Logout system.<br/>
+                            <hr/>
+                            <h4>Log in a user</h4>
+                            Syntax: <pre>$user = new User();
+$user->login($username, $password);</pre>
+                            returns true on a successful log in, otherwise, false.<br/>
+                            Demo: <strong>A proper user login and registration system is demonstrated in the <a href="#login_register" data-toggle="tab">Login/Registration Form</a></strong><br/>
+                            <hr/>
+                            <h4>Log out a User</h4>
+                            Syntax: <pre>$user = new User();
+$user->logout();</pre></div>
+                        
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="page-header"  id="practical_examples">
+                <h1>Practical Examples</h1>
+            </div>
+            <div id="crud_app">
+                <h2>Basic CRUD Application</h2>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="basic_crud">
+                            Create, Read, Update and Delete. The most common system made using PHP.<br/>
+                            With the Miniature Framework, making a CRUD application is easier and elegant as before.<br/>
+                            Demo:
+                            <div class="well">
+                            Table “blog” is used for the demonstration<br/>
+                            Table structure: Blog [id(PK), title, author, content];
+                            </div>
+                            first include the init.php file, to use the framework.
+<pre>include_once 'includes/init.php'</pre>
+                            <pre>
+<strong>// Reading all the blogs</strong>
+$db = Database::getInstance();
+$blogs = $db->select("blog")->getResult();
+foreach($blogs as $blog){
+    echo '&lt;h3&gt;&lt;a href="/blog?id='. $blog->id .'"&gt;'. $blog->title .'&lt;/a&gt;&lt;/h3&gt;';
+    echo '&lt;blockquote&gt;'. $blog->author .'&lt;/blockquote&gt;';
+    echo '&lt;article&gt;'. $blog->content .'&lt;/article&gt;';
+}</pre>
+<pre>
+<strong>// Reading a single blog</strong>
+$db = Database::getInstance();
+$blog = $db->select("blog", array("id", "=", "3"))->getRow();
+echo '&lt;h3&gt;&lt;a href="/blog?id='. $blog->id .'"&gt;'. $blog->title .'&lt;/a&gt;&lt;/h3&gt;';
+echo '&lt;blockquote&gt;'. $blog->author .'&lt;/blockquote&gt;';
+echo '&lt;article&gt;'. $blog->content .'&lt;/article&gt;';</pre>
+                            <pre>
+<strong>// Inserting a blog</strong>
+$db = Database::getInstance();
+if($inserted_id = $db->insert("blog", array(
+        "title" => "this is some title",
+        "author" => "the blog author name XYZ",
+        "content" => "the body content of the blog"
+    )){
+    echo "Blog inserted on the Id " . $inserted_id;
+}</pre>
+                            <pre>
+<strong>// Updating a blog</strong>
+$db = Database::getInstance();
+if($db->update("blog", array(
+        "title" => "this is some title",
+        "author" => "the blog author name XYZ",
+        "content" => "the body content of the blog"
+    ), array("id", "=", "4")){
+    echo "Blog with Id 4 is updatd";
+}</pre>
+                            <pre>
+<strong>// Deleting a Blog</strong>
+$db = Database::getInstance();
+if($db->delete("blog", array("id", "=", "4"))){
+    echo "Blog with Id 4 successfully deleted";
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="login_register">
+                <h2>Login/Registration System</h2>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Application Demonstration</h3>
+                    <span class="pull-right">
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#login_app" data-toggle="tab">Login/Logout System</a></li>
+                            <li class=""><a href="#register_app" data-toggle="tab">Registration System</a></li>
+                            <li class=""><a href="#user_cookie" data-toggle="tab">Storing User Cookie</a></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="login_app">
+                            <h3>Login/Logout System</h3>
+                    The use of User Class is actually to create a secure an easy login n registration system, which is demonstrated in this section.<br/>
+                    The system utilizes, the Token, Input, Validate and User classes.<br/>
+                    <br/>
+                    Logging in a user includes the following steps:
+                    <ol>
+                        <li>Checking for the form if it was submitted or not?</li>
+                        <li>Checking if the $_POST array is not empty.</li>
+                        <li>Checking for valid token, if CSRF protection is applied in the form.</li>
+                        <li>Validating the input from the form.</li>
+                        <li>If the validation was successful, Instantiate the User Class.</li>
+                        <li>Login the User, using the User Class login() method.</li>
+                    </ol>
+                    <strong>Login Form</strong>
+                    <pre>
+&lt;form action="login.php" method="POST"&gt;
+   &nbsp;&nbsp;&nbsp;Username: &lt;input name="username" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;Password: &lt;input name="password" type="password"/&gt;
+   &nbsp;&nbsp;&nbsp;&lt;input name="remember" type="checkbox" value="on" /&gt; Remember Me
+   &nbsp;&nbsp;&nbsp;&lt;input name="token" type="hidden" value="&lt;?php echo Token::generate(); ?&gt;" /&gt; &lt;-- remember to include the token input --&gt;
+   &nbsp;&nbsp;&nbsp;&lt;input type="submit" value="Log In" /&gt;
+&lt;/form&gt;</pre>
+                            <strong>Form Processing</strong>
+                            <pre>&lt;?php
+// include the init.php file
+require_once 'includes/init.php';
+
+// check if $_POST is not an empty array
+if(Input::exists()){
+
+    // check for a valid token
+    if(Token::check(Input::get('token'))){
+
+        // validating inputs
+        $validate = new Validation();
+        $validate->check($_POST, array(
+            'username' => array( 'required' => true  ),
+            'password' => array( 'required' => true  )
+        ));
+
+        // check if the validation was successful
+        if($validate->getPassed()){
+
+            // create a new user
+            $user = new User();
+
+            // getting the remember me value, if it was checked
+            $remember = (Input::get('remember') === 'on') ? true : false;
+
+            // calling the login method and passing username and password to authenticate the user.
+            // if remember me checkbox was checked, then pass it input value in the login method as the 3rd parameter.
+            if($user->login(Input::get('username'), Input::get('password'), $remember)){
+
+                // redirect to main page on authorizing a valid user.
+                Redirect::to('index.php');
+            }else{
+
+                //otherwise output login error
+                // the Validation Class addError() method can be used to add more errors to the Errors array.
+                $validate->addError("Invalid Username/Password");
+                $errors = $validate->getErrors();
+            }
+        } else{
+
+            // the $errors[] array then can be display as HTML
+            $errors = $validate->getErrors();
+        }
+    }
+}
+?&gt;</pre>
+                        The User Class also provides "Remember me" integration, which is discussed in the <a href="#user_cookie" data-toggle="tab">Storing User's Cookie</a> section<br/><br/>
+                        <strong>Log out a user</strong>
+                        logout.php form
+                        <pre>
+&lt;?php
+// include the init.php file
+require_once 'includes/init.php';
+
+// instantiate the User Class
+$user = new User();
+
+// call the logout method
+$user->logout();
+
+// redirect
+Redirect::to('index.php');
+?&gt;</pre>
+                        <strong>Checking wether a user is logged in or not?</strong>
+                        <pre>
+&lt;?php
+// include the init.php file
+require_once 'includes/init.php';
+
+// instantiate the User Class first
+$user = new User();
+
+// include this check on every page
+// the <strong>isLoggedIn()</strong> method returns true if the user is currently logged in, otherwise false.
+if(!$user->isLoggedIn()){
+    Redirect::to('login.php');
+}
+?&gt;</pre>
+                        </div>
+                        <div class="tab-pane" id="register_app">
+                            <h3>Registration System</h3>
+                            <strong>Registration Form</strong>
+                            <pre>&lt;form action="register.php" method="POST"&gt;
+   &nbsp;&nbsp;&nbsp;Username: &lt;input name="username" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;Password: &lt;input name="password" type="password"/&gt;
+   &nbsp;&nbsp;&nbsp;Confirm Password: &lt;input name="confirm_password" type="password"/&gt;
+   &nbsp;&nbsp;&nbsp;Email: &lt;input name="email" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;Full Name&lt;input name="full_name" type="text"/&gt;
+   &nbsp;&nbsp;&nbsp;<strong>&lt;input name="token" type="hidden" value="&lt;?php echo Token::generate(); ?&gt;"/&gt;   &lt-- the Token::generate() method is integrated into a form as an hidden input --&gt</strong>
+   &nbsp;&nbsp;&nbsp;&lt;input type="submit" value="Register" /&gt;
+&lt;/form&gt;
+                            </pre>
+                            <strong>Form Processing</strong>
+                            <pre>
+                            
+&lt;?php
+
+// include the init.php file
+require_once 'includes/init.php';
+
+// check if $_POST is not an empty array
+if(Input::exists()){
+
+    // check for a valid token
+    if(Token::check(Input::get('token'))){
+
+        // validating inputs
+        $validate = new Validation();
+        $validate->check($_POST, array(
+            'username' => array(
+                'required' => true,
+                'min' => 4,
+                'max' => 30,
+                'unique' => 'users'
+            ),
+            'email' => array(
+                'required' => true,
+            ),
+            'password' => array(
+                'required' => true,
+                'min' => 3,
+                'max' => 60,
+            ),
+            'confirm_password' => array(
+                'required' => true,
+                'matches' => 'password'
+            ),
+            'full_name' => array(
+                'required' => true,
+                'min' => 2,
+                'max' => 128
+            )
+        ));
+
+        // check if the validation was successful
+        if($validate->isPassed()){
+
+            // create a new user
+            $user = new User();
+
+            // generating a salt
+            $salt = Hash::generateSalt(32);
+
+            // insert the user into the table
+            try{
+                $userID = $user->save(array(
+                    'username' => Input::get('username'),
+                    'email' => Input::get('email'),
+                    'password' => Hash::generateHash(Input::get('password'), $salt),
+                    'salt' => $salt,
+                    'full_name' => Input::get('full_name'),
+                    'joined' => date('Y-m-d H:i:s')
+                ));
+
+            }catch(Exception $e){
+                print $e->getMessage();
+            }
+        } else{
+
+            // the $errors[] array then can be display as HTML
+            $errors = $validate->getErrors();
+        }
+    }
+}
+?&gt;
+                            </pre>
+                        </div>
+                        <div class="tab-pane" id="user_cookie">
+                            <h3>Storing User's Cookie</h3>
+                            The 'Login/Logout System' section, integrates the 'Remember Me' system into the login form, which stores a user's cookie, and logs it in the next time the users open the site.<br/>
+                            The section gets into the detail of how to Store User's Cookie.<br/><br/>
+                            You need to create a 'User Session' table which can store the user cookies.<br/>
+                            <ol>
+                                <li>Create a User Session table, e.g tbl_user_session.</li>
+                                <li>The table structure must look like this
+                                    <div class="col-md-10">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <td>Column Name</td>
+                                                <td>Type</td>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>id</td>
+                                                    <td>INT (PK)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>uid</td>
+                                                    <td>INT (FK)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>hash</td>
+                                                    <td>VARCHAR(255)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>Open the init.php file and inside the 'table_name' array, add a key value pair of user session table
+                                where the key is the reference to the user session table and the value is the name of that table. Be Careful about it!
+                                    <pre>
+'table_name' => array(
+    'user_session' => 'tbl_user_session'
+)
+// reference to the table => 'table name in the database'</pre>
+                                </li>
+                                <li>And inside the 'table_col' array add the user session column names. The keys must be exactly named like in the code below.
+                                <pre>
+'table_col' => array(
+    'user_session' => array(
+        'hash' => 'hash',
+        'user_id' => 'uid'
+    )
+)
+// 'reference to column' => 'column name in the table'</pre>
+                                We are now done with the configuration here.
+                                </li>
+                                <li>In the login form, provide a checkbox input for remember me and set it's value to 'on'.
+                                <pre>&lt;input name="remember" type="checkbox" value="on" /&gt; Remember Me</pre>
+                                </li>
+                                <li>In the form processing, store the state of remember me input. Storing TRUE will activate cookie.
+                                <pre>$remember = (Input::get('remember') === 'on') ? true : false;</pre>
+                                </li>
+                                <li>Finally, upon loggin in the user using the <strong>login()</strong> method, pass the $remember bool variable as the 3rd parameter.
+                                <pre>$user->login(Input::get('username'), Input::get('password'), $remember);</pre>
+                                </li>
+                            </ol>
+                            This is all you need to setup a system for Storing User's Cookie
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" style="background-color:#2C3E50">
+    <div class="container">
+        <div class="col-lg-12">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="/">© 2014 Miniature.</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/miniature.js"></script>
+</body>
+</html>
